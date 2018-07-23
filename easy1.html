@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+
+      // 1. exercise
+
+      function oddNumbers() {
+        var i;
+        for (i = 1; i < 100; i += 2) {
+          console.log(i);
+        }
+      }
+
+      //. 2. exercise
+
+      function evenNumbers() {
+        var i;
+        for (i = 2; i < 100; i += 2) {
+          console.log(i);
+        }
+      }
+
+      // 3. exercise
+
+      function roomSize() {
+        var length;
+        var width;
+        var squareMeters;
+        var squareFeet;
+
+        length = Number(prompt('Enter the length of the room in meters'));
+        width = Number(prompt('Enter the width of the room in meters'));
+
+        squareMeters = length * width;
+        squareFeet = squareMeters * 10.7639;
+
+        alert('The area of the room is ' + squareMeters.toFixed(2) + ' square meters (' + squareFeet.toFixed(2) + ' square feet).')
+      }
+
+      // 4. exercise
+
+      function tipCalculator() {
+        var bill;
+        var tipPercentage;
+        var tip;
+        var total;
+
+        bill = Number(prompt('What is the bill?'));
+        tipPercentage = Number(prompt('What is the tip percentage?'));
+
+        tip = (bill / 100) * tipPercentage;
+        total = bill + tip;
+
+        alert('The tip is $' + tip.toFixed(2) + ' and the total is $' + total.toFixed(2));
+      }
+
+      // 5. exercise
+
+      function sum(number) {
+        var i;
+        var total = 0;
+        for (i = 1; i <= number; i += 1) {
+          total += i;
+        }
+
+        alert('The sum of integers between 1 and ' + number + ' is ' + total + '.');
+      }
+
+      function product(number) {
+        var i;
+        var total = 1;
+        for (i = 1; i <= number; i += 1) {
+          total *= i;
+        }
+
+        alert('The product of integers between 1 and ' + number + ' is ' + total + '.');
+      }
+
+      function sumOrProduct() {
+        var integer;
+        var sOrP;
+        var outcome;
+
+        integer = Number(prompt('Please enter an integer greater than 0'));
+        sOrP = prompt('Enter "s" to compute the sum, or "p" to computee the product.');
+
+        if (sOrP === 's') {
+          outcome = sum(integer);
+        } else if (sOrP === 'p') {
+          outcome = product(integer);
+        } else {
+          outcome = alert('Oops. Unknown operation.');
+        }
+
+        return outcome;
+      }
+
+      // 6. exercise
+
+      function shortLongShort(a, b) {
+        var short;
+        var long;
+        (a.length < b.length) ? (short = a) : (short = b);
+        (a.length < b.length) ? (long = b) : (long = a);
+
+        return short + long + short;
+      }
+
+      // 7. exercise
+
+      function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+      }
+
+      // 8. exercise
+
+      function isLeapYear(year) {
+        if (year < 1752 && year % 4 === 0) {
+          return true;
+        } else {
+          return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+      }
+
+      // 9. exercise
+
+      function multisum(number) {
+        var i;
+        var total = 0;
+
+        for (i = 1; i <= number; i += 1) {
+          if (i % 3 === 0 || i % 5 === 0) {
+            total += i;
+          }
+        }
+
+        return total;
+      }
+
+      // 10. exercise
+
+      function asciiValue(string) {
+        var sum = 0;
+        var i;
+
+        for (i = 0; i < string.length; i += 1) {
+          sum += string.charCodeAt(i);
+        }
+
+        return sum;
+      }
+      
+    </script>
+  </body>
+</html>
