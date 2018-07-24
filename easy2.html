@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>your page title goes here</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script>
+
+      // 1. exercise
+
+      function crunch(string) {
+        var newString = '';
+        var i;
+
+        for (i = 0; i < string.length; i += 1) {
+          if (newString[newString.length - 1] !== string[i]) {
+            newString += string[i];
+          }
+        }
+
+        return newString;
+      }
+
+      //. 2. exercise
+
+      function logInBox(string) {
+        var firstLine = '';
+        var secondLine = '';
+        var thirdLine = '';
+        var fourthLine;
+        var lastLine;
+        var i;
+
+        for (i = 0; i < string.length + 4; i += 1) {
+          if (i === 0 || i === (string.length + 3)) {
+            firstLine += '+'
+          } else {
+            firstLine += '-'
+          }
+        }
+
+        lastLine = firstLine;
+
+        for (i = 0; i < string.length + 4; i += 1) {
+          if (i === 0 || i === (string.length + 3)) {
+            secondLine += '|'
+          } else {
+            secondLine += ' '
+          }
+        }
+
+        fourthLine = secondLine;
+
+        for (i = 0; i < string.length + 4; i += 1) {
+          if (i === 0 || i === (string.length + 3)) {
+            thirdLine += '|'
+          } else if (i === 1 || i === string.length + 2) {
+            thirdLine += ' '
+          } else {
+            thirdLine += string[i - 2];
+          }
+        }
+
+        console.log(firstLine);
+        console.log(secondLine);
+        console.log(thirdLine);
+        console.log(fourthLine);
+        console.log(lastLine);
+      }
+
+      // 3. exercise
+
+      function stringy(number) {
+        var i;
+        var result = '';
+
+        for (i = 1; i <= number; i += 1) {
+          if (i % 2 === 1) {
+            result += '1';
+          } else {
+            result += '0';
+          }
+        }
+
+        return result;
+      }
+
+      // 4. exercise
+
+      function findFibonacciIndexByLength(length) {
+        var first = 1;
+        var second = 1;
+        var index = 2;
+        var fibonacci;
+
+        do {
+          fibonacci = first + second;
+          index += 1;
+          first = second;
+          second = fibonacci;
+        } while (String(fibonacci).length < length);
+
+        return index;
+      }
+
+      // 5. exercise
+
+      function triangle(number) {
+        var i;
+
+        for (i = number - 1; i >= 0; i -= 1) {
+          console.log(' '.repeat(i) + '*'.repeat(number - i))
+        }
+      }
+
+      // 6. exercise
+
+      // var noun = prompt('Enter a noun:');
+      // var verb = prompt('Enter a verb:');
+      // var adjective = prompt('Enter an adjective:');
+      // var adverb = prompt('Enter an adverb:')
+
+      // alert('Do you ' + verb + ' your ' + adjective + ' ' + noun + ' ' + adverb + "? That's hilarious!");
+
+      // 7. exercise
+
+      function twice(number) {
+        var middleIndex = String(number).length / 2;
+        var isDoubleNumber = true;
+        var i;
+        var string = String(number);
+        
+        for (i = 0; i < middleIndex; i += 1) {
+          if (string[i] !== string[i + middleIndex]) {
+            isDoubleNumber = false;
+          }
+        }
+
+        if (isDoubleNumber) {
+          return number;
+        } else {
+          return number * 2;
+        }
+      }
+
+      // 8. exercise
+
+      function getGrade(a, b, c) {
+        var average = (a + b + c) / 3;
+
+        if (average < 60) {
+          return 'F';
+        } else if (average < 70) {
+          return 'D';
+        } else if (average < 80) {
+          return 'C';
+        } else if (average < 90) {
+          return 'B';
+        } else {
+          return 'A';
+        }
+      }
+
+      // 9. exercise
+
+      function isInAlphabeth(char) {
+        return (char >= 'A' && char <= 'Z') ||
+        (char >= 'a' && char <= 'z');
+      }
+
+      function cleanUp(string) {
+        var i;
+        var newString = '';
+
+        for (i = 0; i < string.length; i += 1) {
+          if (isInAlphabeth(string[i])) {
+            newString += string[i];
+          } else if (newString[newString.length - 1] !== ' ') {
+            newString += ' ';
+          }
+        }
+
+        console.log(newString);
+      }
+
+      // 10. exercise
+
+      function century(year) {
+        var centuryNumber = String(Math.ceil(year / 100));
+        var lastTwoNumbers = centuryNumber[centuryNumber.length - 2] + centuryNumber[centuryNumber.length - 1];
+        var lastNumber = centuryNumber[centuryNumber.length - 1];
+        var suffix = 'th';
+
+        if (lastTwoNumbers === '11' || lastTwoNumbers === '12' || lastTwoNumbers === '13') {
+          suffix = 'th';
+        } else if (lastNumber === '1') {
+          suffix = 'st';
+        } else if (lastNumber === '2') {
+          suffix = 'nd';
+        } else if (lastNumber === '3') {
+          suffix = 'rd'
+        }
+
+        return centuryNumber + suffix;
+      }
+      
+    </script>
+  </body>
+</html>
